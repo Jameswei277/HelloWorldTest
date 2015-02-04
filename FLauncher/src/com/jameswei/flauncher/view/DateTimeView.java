@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.jameswei.flauncher.R;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -31,6 +30,7 @@ public class DateTimeView extends RelativeLayout{
 		update();
 	}
 
+
 	private void update() {
 		Date date = new Date(System.currentTimeMillis());
 		mTimeView.setText(new SimpleDateFormat("HH:mm").format(date));
@@ -52,6 +52,7 @@ public class DateTimeView extends RelativeLayout{
 	@Override
 	protected void onDetachedFromWindow() {
 		super.onDetachedFromWindow();
+		getContext().unregisterReceiver(mDBroadcastReceiver);
 	}
 	
 	
