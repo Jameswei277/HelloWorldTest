@@ -1,1 +1,4 @@
+#ignore bin file 
 bin/*
+#ignore gen file
+gen/*
