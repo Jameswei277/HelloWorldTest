@@ -5,7 +5,10 @@ import java.util.Date;
 
 import com.jameswei.flauncher.R;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
@@ -34,5 +37,29 @@ public class DateTimeView extends RelativeLayout{
 		mDateView.setText(new SimpleDateFormat("yyyy/MM/dd").format(date));
         mWeekView.setText(new SimpleDateFormat("EEEE").format(date));
 	}
+
+	@Override
+	protected void onAttachedToWindow() {
+		super.onAttachedToWindow();
+		IntentFilter mDateFilter = new IntentFilter();
+		mDateFilter.addAction(Intent.ACTION_TIME_TICK);
+		mDateFilter.addAction(Intent.ACTION_TIME_CHANGED);
+		mDateFilter.addAction(Intent.ACTION_CONFIGURATION_CHANGED);
+		mDateFilter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
+		getContext().registerReceiver(mDBroadcastReceiver, mDateFilter);
+	}
+
+	@Override
+	protected void onDetachedFromWindow() {
+		super.onDetachedFromWindow();
+	}
+	
+	
+	private BroadcastReceiver mDBroadcastReceiver = new BroadcastReceiver() {
+
+		public void onReceive(Context context, Intent intent) {
+			update();
+		}
+	};
 
 }
