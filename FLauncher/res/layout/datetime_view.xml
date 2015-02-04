@@ -1,0 +1,23 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+     <TextView android:id="@+id/dt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="17dip"
+        android:textColor="@android:color/white"
+        android:textSize="35sp"/>
+    <TextView android:id="@+id/dt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dt_time"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"/>
+     <TextView android:id="@+id/dt_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dt_time"
+        android:layout_below="@id/dt_date"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"/>
+</merge>

@@ -13,11 +13,19 @@
             android:layout_height="wrap_content"
             android:src="@drawable/logo"
             />
-
         <Space android:layout_width="0dip"
             android:layout_height="1dip"
             android:layout_weight="1"  />
-        
+        <com.jameswei.flauncher.view.DateTimeView 
+            android:id="@+id/btn_datetime"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
+            android:focusable="true"
+            android:clickable="true"
+            android:background="@drawable/title_item_selector"
+            />
     </LinearLayout>
     
     
