@@ -1,0 +1,36 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <RelativeLayout android:id="@+id/reletiv_weather"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content">
+            <TextView android:id="@+id/weather_city"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:textColor="@android:color/white"
+        		android:textSize="16sp"/>
+            <TextView android:id="@+id/weather_temp"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@id/weather_city"
+		        android:textColor="@android:color/white"
+		        android:textSize="16sp"/>
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/weather_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/reletiv_weather"
+            android:src="@drawable/weather_line" />
+        <ImageView
+	        android:id="@+id/weather_icon"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_marginLeft="10dp"
+	        android:layout_toEndOf="@id/weather_line"/>
+    </RelativeLayout>
+</merge>
